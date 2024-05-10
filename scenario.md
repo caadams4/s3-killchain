@@ -1,4 +1,4 @@
-# AWS S3 Bucket Vulnerabilities
+# AWS Sagemaker S3 Bucket Vulnerabilities
 
 ## Overview
 Amazon S3 (Simple Storage Service) is a scalable object storage service provided by AWS. While it is designed for high availability, scalability, and secure storage of data, misconfigurations and misuse can lead to serious security vulnerabilities. Understanding these vulnerabilities is crucial for securing your data effectively.
