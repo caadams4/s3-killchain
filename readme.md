@@ -1,6 +1,25 @@
 # AWS Sagemaker S3 Bucket Vulnerabilities
 
-## Overview
+## Sagemaker Architecture
+
+![image](https://github.com/caadams4/s3-killchain/assets/79220528/8a74b556-61e3-4c8a-acf3-2c69f4561dda)
+
+## s3 Buckets and Sagemaker
+
+Protecting an S3 bucket used by AWS SageMaker is crucial for several reasons:
+
+### 1. Data Security
+- **Sensitive Data**: S3 buckets often store sensitive data, including training datasets, model artifacts, and output predictions. Unauthorized access could lead to data breaches and exposure of confidential information.
+- **Compliance**: Many organizations must comply with regulations (e.g., GDPR, HIPAA) that require strict data protection measures. Ensuring the security of S3 buckets helps maintain compliance with these regulations.
+
+### 2. Integrity of Data
+- **Accurate Models**: The integrity of the training data is essential for developing accurate machine learning models. Unauthorized changes to the data can lead to corrupted or biased models, affecting their performance and reliability.
+- **Traceability**: Protecting the data ensures that the lineage and provenance of the data are maintained, which is important for auditing and reproducibility.
+
+### 3. Operational Continuity
+- **Service Disruption**: Unauthorized access or malicious activities (e.g., data deletion, encryption by ransomware) can disrupt services. Ensuring proper security measures are in place helps maintain the availability and reliability of AWS SageMaker services.
+
+## s3 Buckets Overview
 Amazon S3 (Simple Storage Service) is a scalable object storage service provided by AWS. While it is designed for high availability, scalability, and secure storage of data, misconfigurations and misuse can lead to serious security vulnerabilities. Understanding these vulnerabilities is crucial for securing your data effectively.
 
 ## Common Vulnerabilities
@@ -41,7 +60,7 @@ We will use cewl to generate the wordlist: `cewl http://34.237.3.44/ -w bucket-n
 
 Next: we'll fast-forward to fuzzing for s3 buckets. Here I have a custom Python3 script that takes in a wordlist and fuzzes for s3 buckets that are publically accessible.
 
-```
+```Python3
 import argparse
 import requests
 from colorama import Fore, Back, Style
