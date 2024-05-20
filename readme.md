@@ -103,7 +103,12 @@ if __name__ == "__main__":
     main()
 ```
 
-## Steal, manipulate, upload malware
+## Scan, steal, manipulate, upload malware
+
+Using our tool to scan for our target bucket - 
+
+![image](https://github.com/caadams4/s3-killchain/assets/79220528/4eb9b3f5-b79f-4c8d-82a6-7d2979f82dd1)
+
 
 We can manipulate the data with aws cli tools
 
